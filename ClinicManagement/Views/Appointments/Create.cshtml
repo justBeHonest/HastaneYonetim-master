@@ -96,7 +96,7 @@
 
             var URL = '/appointments/DoctorsList/';
             $.getJSON(URL, function (data) {
-                var items = '<option value="">Select Doctor</option>';
+                var items = '<option value="">Doktor Seç</option>';
                 $.each(data, function (i, doctor) {
                     items += "<option value='" + doctor.Value + "'>" + doctor.Text
                     + "</option>";

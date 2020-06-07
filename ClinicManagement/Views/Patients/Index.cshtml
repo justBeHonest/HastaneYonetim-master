@@ -17,7 +17,7 @@
                 <table id="patients" class="data table table-striped no-margin">
                     <thead>
                         <tr>
-                            <th>Jeton</th>
+                            <th>Hasta Numarası</th>
                             <th>İsim</th>
                             <th>Telefon</th>
                             <th>Adres</th>
@@ -68,9 +68,9 @@
                     {
                         data: "id",
                         render: function (data, type, patient) {
-                            return "<a href='/patients/details/ " + patient.id + "' class='btn btn-default btn-xs'>" + "<i class='fa fa-folder'></i>View</a>" +
+                            return "<a href='/patients/details/ " + patient.id + "' class='btn btn-default btn-xs'>" + "<i class='fa fa-folder'></i>Görünüm</a>" +
                                 //"<button class= 'btn-link js-detail' data-detail-id=" + data + "><i class='fa fa-pencil-square'></i></button>" +
-                                "<button class= 'btn btn-danger btn-xs js-delete' data-patient-id=" + data + "><i class='fa fa-trash-o'></i>Delete</button>";
+                                "<button class= 'btn btn-danger btn-xs js-delete' data-patient-id=" + data + "><i class='fa fa-trash-o'></i>Sil</button>";
                         }
                     }
 
@@ -84,7 +84,7 @@
             $("#patients").on("click", ".js-delete", function () {
                 var button = $(this);
 
-                bootbox.confirm("Are you sure to delete this patient?", function (result) {
+                bootbox.confirm("Bu hastayı silmek istediğinize emin misiniz?", function (result) {
                     if (result) {
                         $.ajax({
                             url: "/api/patients/" + button.attr("data-patient-id"),
